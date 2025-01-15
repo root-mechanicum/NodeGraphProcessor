@@ -193,7 +193,9 @@ namespace GraphProcessor
 				if (e.clickCount == 2 && e.button == (int)MouseButton.LeftMouse)
                 {
 					OpenTitleEditor();
-                    focusController.IgnoreEvent(e);
+#if UNITY_6000_0_OR_NEWER
+					focusController.IgnoreEvent(e);
+#endif
 				}
 			});
 
