@@ -192,9 +192,9 @@ namespace GraphProcessor
 			titleLabel.RegisterCallback<MouseDownEvent>(e => {
 				if (e.clickCount == 2 && e.button == (int)MouseButton.LeftMouse)
                 {
-					e.StopPropagation();
 					OpenTitleEditor();
-                }
+                    focusController.IgnoreEvent(e);
+				}
 			});
 
 			titleTextField.RegisterValueChangedCallback(e => CloseAndSaveTitleEditor(e.newValue));
